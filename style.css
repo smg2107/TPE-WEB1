@@ -125,6 +125,7 @@ ul.extras li {
 
 .contenedor {
     display: block;
+    background-color: light blue;
 }
 
 #contraseña-form, #nombre-form, #apellido-form, #boton-form, .contenedor {
