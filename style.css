@@ -105,19 +105,17 @@ footer{
     background-color: rgb(83, 81, 81);
 }
 
-footer a img{
-    width: 30px;
-    height: 30px;
-    position: relative;
-    left: 1400px;
-    padding: 5px;
-    margin-top: 10px;
+footer .extras {
+  display: flex;
+  width: 100%;
+  background: yellow;
+  padding-left: 0;
+  justify-content: center;
 }
-
-footer div{
-    display: inline-block;
-}
-
-footer p{
-    margin-left: 20px;
+ul.extras li {
+  list-style: none;
+  margin: 0px 10px;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px;
 }
