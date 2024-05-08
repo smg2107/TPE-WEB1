@@ -1,5 +1,5 @@
 body{
-    background-color: while;
+    background-color: black;
     background-image: url(Imagenes/logo\ invierno\ 2.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -86,6 +86,8 @@ li{
     padding-right: 20px;
     color: while;
 }
+
+
 .perfil{
     width: 100px;
     height: 100px;
@@ -131,5 +133,6 @@ ul.extras li {
 
 #contraseña-form, #nombre-form, #apellido-form, #boton-form, .contenedor {
   display: block;
-  border-color: lightpink;
+  border-color: lightblue;
+    color: while;
 }
