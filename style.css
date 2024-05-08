@@ -92,6 +92,9 @@ li{
   
 }
 
+.integrantes{
+    display: inline;
+}
 
 .cursor:hover{
     cursor: url(Imagenes/logo\ insta.png),
