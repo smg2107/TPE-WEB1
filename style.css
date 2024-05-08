@@ -97,6 +97,7 @@ li{
 
 .integrantes{
    display: inline-block;
+     background-position: center;
 }
 
 .cursor:hover{
