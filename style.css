@@ -115,7 +115,16 @@ footer .extras {
 ul.extras li {
   list-style: none;
   margin: 0px 10px;
-  color: white;
+  color: blue;
   text-transform: uppercase;
   padding: 15px;
+}
+
+.contenedor {
+    display: block;
+}
+
+#contraseña-form, #nombre-form, #apellido-form, #boton-form, .contenedor {
+  display: block;
+  border-color: lightpink;
 }
