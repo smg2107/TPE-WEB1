@@ -93,7 +93,7 @@ li{
 }
 
 .integrantes{
-    display: inline;
+   display: inline-block;
 }
 
 .cursor:hover{
