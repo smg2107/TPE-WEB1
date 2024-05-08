@@ -36,6 +36,34 @@
             <li>Valor</li>
         </ul>
 
+        <h3>Si queres unirte al CLUB DE FANS para que te llegue informacion sobre los conciertos, las promociones especiales y los lanzamientos de temas te pedimos que completes el siguiente formulario:</h3>
+        <div>
+            <form class="contenedor">
+                <p>ACLARACION: todos los campos son obligatorios!</p>
+                <label form="Nombre">Nombre:</label>
+                <input id="nombre-form" type="text" name="Nombre" value="" placeholder="Nombre de usuario" required>
+
+
+                <label form="Apellido">Apellido:</label>
+                <input id="apellido-form" type="text" name="Apellido" value="" placeholder="Apellido de usuario" required>
+
+                <label form="Contraseña">Cree una contraseña:</label><input id="contraseña-form" type="password" name="Contraseña" value="" placeholder="Contraseña" required>
+                <label form="Contraseña">Repita la contraseña:</label><input id="contraseña-form" type="password" name="Contraseña" value="" placeholder="Contraseña" required>
+
+                <label form="Email">Ingrese su email:</label>
+                <input  id="email-form" type="email" name="Email" value="" placeholder="Ingrese su email" required>
+
+                <input type="button" value="ENVIAR" id="boton-form">
+
+                <!--CAPTCHA-->
+                <div class="divcaptcha">
+                    <label for = "captcha"></label>
+                    <p id="numerocaptcha"></p>
+                    <input type="text" id="escribircaptcha"placeholder = "ingrese numero">
+                    <input type="button" id="boton" value="registrar"> 
+                    <p id="confirmacioncaptcha"></p>
+                </div>
+            </form>
     </main>
 
     <footer>
