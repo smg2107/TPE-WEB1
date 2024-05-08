@@ -13,7 +13,27 @@ header{
 
 .header{
     display: inline-block;
-    
+}
+
+.menu {
+    border-bottom: 4px solid pink;
+    width: 100%;
+    display: flex;
+    background-color: rgb(255, 12, 105);
+}
+
+ul.navegacion {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+  flex-direction: column;
+}
+
+ul.navegacion li {
+  list-style: none;
+  margin: 0px 0px;
+  padding: 15px 20px;
 }
 
 nav{
@@ -31,6 +51,7 @@ h1{
     font-style: normal;
     padding: 0%;
     margin: 0%;
+    text-align: center;
 }
 
 h2{
@@ -41,7 +62,7 @@ h2{
     font-style: italic;
     padding: 0%;
     margin: 0%;
-    
+    text-decoration: underline;
 }
 
 h3, h4, h5, p{
@@ -77,6 +98,8 @@ li{
     auto;
     
 }
+//puntos de quiebre
+
 
 footer{
     background-color: rgb(83, 81, 81);
