@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTLVV</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+    <title>Entradas - NTLVV</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="Imagenes/logo invierno 2.png">
 </head>
 <body>
@@ -17,15 +14,15 @@
             <h2>No te la viste venir</h2>
         </div>
     </header>
-    <nav class="menu">
-        <ul class="navegacion">
+    <nav>
+        <ul>
             <li><a href="index.html">¿Quienes somos?</a></li>
             <li><a href="canciones.html">Canciones</a></li>
             <li><a href="entradas.html">Entradas</a></li>
         </ul>
     </nav>
     <main>
-        <h3>Sobre nosotros</h3>
+        <h2>Sobre nosotros</h2>
         <p>¡Bienvenidos a la página! Somos una banda Harcore/Stonner de protesta que se formo en diciembre del 2023, momento en el cual se realizaba el cambio de gobierno, situacion que nos tomo por sorpresa y dio origen al nombre de la banda. De nuestras ganas de expresarnos y hacer música surgio una linda amistad, que nos lleva a compartir muchos mas momentos por dentro y fuera de la música, y que alimentan nuestras ganas de seguir.</p>
         <h3>Integrantes</h3>
         <div class="integrantes">
@@ -34,9 +31,9 @@
         <a class="cursor" href="https://www.instagram.com/lau_foto.s?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="perfil" src="Imagenes/laura.jpg" alt="Laura Escofet"></a>
         </div>
         <div class="integrantes">
+        <a class="cursor" href="https://www.instagram.com/gustavogardonio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="perfil" src="Imagenes/guya.jpg" alt="Gustavo Gardonio"></a>
         <h4>Gustavo Gardonio</h4>
         <h5>Guitarra</h5>
-        <a class="cursor" href="https://www.instagram.com/gustavogardonio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="perfil" src="Imagenes/guya.jpg" alt="Gustavo Gardonio"></a>
         </div>
         <div class="integrantes">
         <h4>Felipe Sotelo</h4>
@@ -44,11 +41,41 @@
         <a class="cursor" href="https://www.instagram.com/f.e.l.i.6.6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="perfil" src="Imagenes/fei.jpg" alt="Felipe Sotelo"></a>
         </div>
         <div class="integrantes">
+        <a class="cursor" href="https://www.instagram.com/sandra_gonzalez_86/"><img class="perfil" src="Imagenes/san.jpg" alt="Sandra González"></a>
         <h4>Sandra González</h4>
         <h5>Voz</h5>
-        <a class="cursor" href="https://www.instagram.com/sandra_gonzalez_86/"><img class="perfil" src="Imagenes/san.jpg" alt="Sandra González"></a>
         </div>
         </div>
+
+        <h3>Si queres unirte al CLUB DE FANS para que te llegue informacion sobre los conciertos, las promociones especiales y los lanzamientos de temas te pedimos que completes el siguiente formulario:</h3>
+        <div>
+            <form class="contenedor">
+                <p>ACLARACION: todos los campos son obligatorios!</p>
+                <label form="Nombre" class="form">Nombre:</label>
+                <input id="nombre-form" type="text" name="Nombre" value="" placeholder="Nombre de usuario" required>
+
+
+                <label form="Apellido" class="form">Apellido:</label>
+                <input id="apellido-form" type="text" name="Apellido" value="" placeholder="Apellido de usuario" required>
+
+                <label form="Contraseña" class="form">Cree una contraseña:</label><input id="contraseña-form" type="password" name="Contraseña" value="" placeholder="Contraseña" required>
+                <label form="Contraseña" class="form">Repita la contraseña:</label><input id="contraseña-form" type="password" name="Contraseña" value="" placeholder="Contraseña" required>
+
+                <label form="Email" class="form">Ingrese su email:</label>
+                <input  id="email-form" type="email" name="Email" value="" placeholder="Ingrese su email" required>
+
+                <input type="button" value="ENVIAR" id="boton-form">
+
+                <!--CAPTCHA-->
+                <p>Por ultimo te dejamos un CAPTVHA (es una forma que tenemos para verificar si sos una persona o un robot), solo debes colocar el numero que aparece en pantalla:</p>
+                <div class="divcaptcha">
+                    <label for = "captcha"></label>
+                    <p id="numerocaptcha"></p>
+                    <input type="text" id="escribircaptcha"placeholder = "ingrese numero">
+                    <input type="button" id="boton" value="registrar"> 
+                    <p id="confirmacioncaptcha"></p>
+                </div>
+            </form>
     </main>
     
     <footer>
