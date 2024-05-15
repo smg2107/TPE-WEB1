@@ -9,17 +9,13 @@ body{
 
 header{
     background-color: rgb(83, 81, 81);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header{
     display: inline-block;
-}
-
-.menu {
-    border-bottom: 4px solid pink;
-    width: 100%;
-    display: flex;
-    background-color: rgb(255, 12, 105);
 }
 
 ul.navegacion {
@@ -37,10 +33,10 @@ ul.navegacion li {
 }
 
 nav{
-    background-color: rgb(255, 184, 220);
-    padding: 1px 0px 1px 0px;
-    
-    
+    border-bottom: 4px solid lightblue;
+    width: 100%;
+    display: flex;
+    background-color: rgb(12, 227, 255);
 }
 
 h1{
@@ -103,10 +99,7 @@ li{
 .cursor:hover{
     cursor: url(Imagenes/logo\ insta.png),
     auto;
-    
 }
-//puntos de quiebre
-
 
 footer{
     background-color: rgb(83, 81, 81);
@@ -132,8 +125,26 @@ ul.extras li {
     background-color: light blue;
 }
 
+.form , .lista{
+    color: white;
+}
+
 #contraseña-form, #nombre-form, #apellido-form, #boton-form, .contenedor {
   display: block;
   border-color: lightblue;
     color: while;
 }
+
+table,
+  tr,
+  td {
+    border:  rgb(139, 228, 228) 2px solid;
+    border-collapse: collapse;
+    background-color: lightpink;
+    color: black;
+  }
+
+.tabla {
+    background-color: rgb(139, 228, 228);
+  }
+  
