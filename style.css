@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    background-image: url(Imagenes/logo\ invierno\ 2.png);
+    background-image: url(/Imagenes/logo\ invierno\ 2.png);
     background-repeat: no-repeat;
     background-position: center;
     padding: 0%;
@@ -93,7 +93,8 @@ li{
 
 .integrantes{
    display: inline-block;
-     background-position: center;
+    background-position: center;
+    margin: 50px;
 }
 
 .cursor:hover{
@@ -148,3 +149,16 @@ table,
     background-color: rgb(139, 228, 228);
   }
   
+.divcaptcha {
+  color: white;
+}
+
+
+@media only screen and (max-width: 320px) {
+  nav {
+    border-bottom: 4px solid lightblue;
+    width: 100%;
+    display: block;
+    background-color: rgb(12, 227, 255);
+  }
+}
