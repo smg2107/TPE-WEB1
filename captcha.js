@@ -12,10 +12,6 @@ function validacioncaptcha(){
     if(numerocaptcha.innerText == escribircaptcha.value){
         let correcto = document.getElementById("confirmacioncaptcha");
         correcto.innerText= "Codigo correcto";
-        <><h3>Dejanos tu consulta:</h3><form action="" id="consultas">
-            <textarea name="text" id="" cols="30" rows="10"></textarea>
-            <input type="button" value="ENVIAR">
-            </></form></>
     } else{
         let incorrecto = document.getElementById("confirmacioncaptcha");
         incorrecto.innerText="Codigo incorrecto";
