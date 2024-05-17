@@ -3,146 +3,148 @@
   padding: 0;
 }
 
-body{
-    background-color: black;
-    background-image: url(/Imagenes/logo\ invierno\ 2.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position-y: 100px;
-    padding: 0%;
-    margin: 0%;
+body {
+  background-color: black;
+  background-image: url(/Imagenes/logo\ invierno\ 2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 100px;
+  padding: 0%;
+  margin: 0%;
 }
 
-.encabezado{
+.encabezado {
   position: fixed;
   width: 100%;
 }
 
-.bar{
+.bar {
   display: none;
   background: none;
   border: none;
-  font-size: 20px
+  font-size: 20px;
 }
 
-header{
-    background-color: rgb(83, 81, 81);
-    
+header {
+  background-color: rgb(83, 81, 81);
 }
 
-header div{
-    display: inline-block;
+header div {
+  display: inline-block;
 }
 
-main{
+main {
   padding-top: 250px;
 }
 
-main a{
-  color:white;
-  
+main a {
+  color: white;
 }
 
-nav{
-    border-bottom: 4px solid lightblue;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    background-color: rgb(12, 227, 255);
-    align-items: center;
+nav {
+  border-bottom: 4px solid lightblue;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: rgb(12, 227, 255);
+  align-items: center;
 }
 
-.hover:hover{
+.hover:hover {
   background-color: rgb(88, 123, 255);
   padding: 14px;
   transition-duration: 0.5s;
 }
 
-nav a{
-text-decoration: none;
+nav a {
+  text-decoration: none;
 }
 
-header div h1{
-    color: rgb(88, 123, 255);
-    font-family: "Mynerve";
-    font-weight: 4000;
-    font-size: 100px;
-    font-style: normal;
-    padding: 0%;
-    margin: 0%;
-    text-align: center;
-    text-shadow: 1px 1px 3px black;
+header div h1 {
+  color: rgb(88, 123, 255);
+  font-family: "Mynerve";
+  font-weight: 4000;
+  font-size: 100px;
+  font-style: normal;
+  padding: 0%;
+  margin: 0%;
+  text-align: center;
+  text-shadow: 1px 1px 3px black;
 }
 
-h2{
-    color: rgb(142, 210, 246);
-    font-family: "Mynerve", cursive;
-    font-weight: 1000;
-    font-size: 30px;
-    font-style: italic;
-    padding: 0%;
-    margin: 0%;
-    text-shadow: 1px 1px 3px black;
-    
+h2 {
+  color: rgb(142, 210, 246);
+  font-family: "Mynerve", cursive;
+  font-weight: 1000;
+  font-size: 30px;
+  font-style: italic;
+  padding: 0%;
+  margin: 0%;
+  text-shadow: 1px 1px 3px black;
 }
 
-main h1{
-  color:rgb(142, 210, 246);
+main h1 {
+  color: rgb(142, 210, 246);
   font-family: "Mynerve";
   font-weight: 4000;
   font-size: 80px;
   text-shadow: 1px 1px 3px black;
 }
 
-main ul li{
-font-size: 30px;
+main ul li {
+  font-size: 30px;
 }
 
-h3, h4, h5, p{
-    text-shadow: 1px 1px 3px black;
-    color: white;
-    font-size: 20px;
+h3,
+h4,
+h5,
+p {
+  text-shadow: 1px 1px 3px black;
+  color: white;
+  font-size: 20px;
 }
 
-
-nav ul{
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    color: black;
-    padding: 10px;
-  
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  color: black;
+  padding: 10px;
 }
 
-nav ul li{
-    text-decoration: none;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-right: 20px;
-    color: white;
+nav ul li {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 20px;
+  color: white;
 }
 
-
-.perfil{
-    width: 100px;
-    height: 100px;
-    border-radius:50%;
-  
+.perfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-.integrantes{
-    display: inline-block;
-    background-position: center;
-    margin: 30px;
+.integrantes-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
-.cursor:hover{
-    cursor: url(Imagenes/logo\ insta.png),
-    auto;
+.integrantes {
+  display: inline-block;
+  background-position: center;
+  margin: 30px;
 }
 
-footer{
-    background-color: yellow;
+.cursor:hover {
+  cursor: url(Imagenes/logo\ insta.png), auto;
+}
+
+footer {
+  background-color: yellow;
 }
 
 footer ul {
@@ -161,30 +163,90 @@ footer ul li {
   padding: 15px;
 }
 
-footer p{
+footer p {
   font-size: 16px;
 }
 
 form {
-    display: block;
-    background-color: light blue;
+  display: flex;
+  background-color: light blue;
+  flex-direction: column;
 }
 
-.form , .lista{
-    color: white;
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "nombre . apellido"
+    "contrasenia . repcontrasenia"
+    ". email .";
+  margin-top: 20px;
+  max-width: 600px;
+  align-self: center;
 }
 
-#contraseña-form, #nombre-form, #apellido-form, #boton-form, .contenedor {
+.form,
+.lista {
+  color: white;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.nombre {
+  grid-area: nombre;
+}
+
+.apellido {
+  grid-area: apellido;
+}
+
+.contrasenia {
+  grid-area: contrasenia;
+}
+
+.repcontrasenia {
+  grid-area: repcontrasenia;
+}
+
+.email {
+  grid-area: email;
+}
+
+.submit-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
+  max-width: 600px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+#contraseña-form,
+#nombre-form,
+#apellido-form,
+#boton-form,
+.contenedor {
   display: block;
   border-color: lightblue;
-    color: black;
+  color: black;
 }
 
-input{
+input {
   margin: 8px;
 }
 
-#numerocaptcha{
+.captcha-container {
+  max-width: 600px;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#numerocaptcha {
   font-family: "Jersey 10 Charted", sans-serif;
   font-weight: 400;
   font-size: 50px;
@@ -193,57 +255,67 @@ input{
 }
 
 table,
-  tr,
-  td {
-    border:  rgb(139, 228, 228) 2px solid;
-    border-collapse: collapse;
-    background-color: lightpink;
-    color: black;
-    font-size: 30px;
-  }
+tr,
+td {
+  border: rgb(139, 228, 228) 2px solid;
+  border-collapse: collapse;
+  background-color: lightpink;
+  color: black;
+  font-size: 30px;
+}
 
 .tabla {
-    background-color: rgb(139, 228, 228);
-  }
-  
+  background-color: rgb(139, 228, 228);
+}
+
 .divcaptcha {
   color: white;
 }
 
-
-
 @media (max-width: 768px) {
-  h1{
-font-size: 80px;
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nombre"
+      "apellido"
+      "contrasenia"
+      "repcontrasenia"
+      "email";
   }
 
-  nav a{
+  h1 {
+    font-size: 80px;
+  }
+
+  nav a {
     text-decoration: none;
   }
 
-  nav ul{
+  nav ul {
     flex-direction: column;
   }
 
-  nav ul{
+  nav ul {
     background-color: rgb(12, 227, 255);
     position: fixed;
     top: 220px;
   }
 
-  .menu{
+  .menu {
     left: 100%;
   }
 
-  nav ul li{
+  nav ul li {
     padding-bottom: 10px;
   }
 
-  .bar{
-    display:block ;
+  .bar {
+    display: block;
     padding-left: 10px;
   }
-    
-  
-  
+
+  .integrantes-container {
+    flex-direction: column;
+  }
 }
