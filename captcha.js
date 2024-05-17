@@ -18,3 +18,15 @@ function validacioncaptcha(){
 
     }
 }
+
+//BOTON MENÚ
+
+let bar = document.querySelector(".bar");
+let menu = document.querySelector(".menu");
+
+bar.addEventListener("click",menuVisible);
+
+function menuVisible(){
+    menu.classList.toggle("menu");
+}
+
