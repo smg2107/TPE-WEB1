@@ -88,34 +88,48 @@ function ocultarMensaje() {
 async function crearDatos(e){
     e.preventDefault();
 
+    let data = validarCampos();
+
+    if ( data ) {
+        try {
+            let res = await fetch(url,{
+            'method': 'POST',
+            'headers': {'Content-Type':'application/json'},
+            'body':JSON.stringify(data)
+            });
+            if(res.status==201){
+                obtenerDatos().then(function(){ 
+                    mostrarMensaje("Creado correctamente!", "exito");
+                })
+            }
+        } catch (error) {
+            mostrarMensaje(`<p>${error}</p>`, "error");
+        }
+    }
+    
+}
+
+function validarCampos() {    
     let lugar = document.querySelector("#input-lugar").value;
     let dia = document.querySelector("#input-dia").value;
     let horario = document.querySelector("#input-horario").value;
     let punto = document.querySelector("#input-punto").value;
     let valor = document.querySelector("#input-valor").value;
-    let data = {"lugar": lugar,
-        "dia": dia,
-        "horario": horario,
-        "punto": punto,
-        "valor": valor
-}
-    try {
-        let res = await fetch(url,{
-        'method': 'POST',
-        'headers': {'Content-Type':'application/json'},
-        'body':JSON.stringify(data)
-        });
-        if(res.status==201){
-            obtenerDatos().then(function(){ 
-                mostrarMensaje("Creado correctamente!", "exito");
-            })
-        }
-    } catch (error) {
-        mostrarMensaje(`<p>${error}</p>`, "error");
-    }
-    
-}
 
+    if ( lugar == "" || dia == "" || horario == "" || punto == "" || valor == "" ) {
+        mostrarMensaje("Debe completar todos los campos.", "error");
+        return false;
+    } else {
+        let data = {
+            "lugar": lugar,
+            "dia": dia,
+            "horario": horario,
+            "punto": punto,
+            "valor": valor
+        }
+        return data;
+    }
+}
 
 //BORRAR
 async function borrarDatos(e){
@@ -144,29 +158,22 @@ async function editarDatos(e){
     let row = e.target.parentElement.parentElement.parentElement
     let id = row.id;
 
-    let lugar = document.querySelector("#input-lugar").value;
-    let dia = document.querySelector("#input-dia").value;
-    let horario = document.querySelector("#input-horario").value;
-    let punto = document.querySelector("#input-punto").value;
-    let valor = document.querySelector("#input-valor").value;
-    let data = {"lugar": lugar,
-        "dia": dia,
-        "horario": horario,
-        "punto": punto,
-        "valor": valor
-    }
-    try {
-        let res = await fetch(url+"/"+id,{
-        'method': 'PUT',
-        'headers': {'Content-Type':'application/json'},
-        'body':JSON.stringify(data)
-        });
-        if(res.status==200){
-            obtenerDatos().then(function(){ 
-                mostrarMensaje("Modificado correctamente!", "exito");
-            })
+    let data = validarCampos();
+
+    if ( data ) {
+        try {
+            let res = await fetch(url+"/"+id,{
+            'method': 'PUT',
+            'headers': {'Content-Type':'application/json'},
+            'body':JSON.stringify(data)
+            });
+            if(res.status==200){
+                obtenerDatos().then(function(){ 
+                    mostrarMensaje("Modificado correctamente!", "exito");
+                })
+            }
+        } catch (error) {
+            mostrarMensaje(`<p>${error}</p>`, "error");
         }
-    } catch (error) {
-        mostrarMensaje(`<p>${error}</p>`, "error");
     }
 }

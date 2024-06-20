@@ -321,6 +321,7 @@ td {
   border-radius: 10px;
   margin: 10px 0;
   display: inline-block;
+  margin-top: 30px;
 }
 .mensaje p {
   color: black;
@@ -375,7 +376,7 @@ form div{
   padding-right: 10px;
   align-self: end;
 }
-.input-container-crear {
+.input-container-enviar {
   padding-right: 0;
 }
 
