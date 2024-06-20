@@ -35,7 +35,7 @@
             <li>Punto de ventas</li>
             <li>Valor</li>
         </ul>
-
+        
         <h3>Acontinuacion te dejamos una tabla en donde veremos los proximos conciertos:</h3>
         <table>
             <thead>
@@ -45,39 +45,71 @@
                     <td class="tabla">Horario</td>
                     <td class="tabla">Puntos de venta</td>
                     <td class="tabla">Valor de la entrada</td>
+                    <td class="td-btn">Modificar</td>
+                    
                 </tr>
             </thead>
                 <tr>
-                    <td>Teatro del fuerte</td>
-                    <td>22/07/2024</td>
-                    <td>19.30hs</td>
-                    <td>Por instagram de la banda</td>
-                    <td>$2500</td>
+                    <td id="lugar1"></td>
+                    <td id="dia1"></td>
+                    <td id="horario1"></td>
+                    <td id="punto1"></td>
+                    <td id="valor1"></td>
+                    <td class="td-btn"><botton id="btn-editar1" class="btn-tabla">Editar</botton><span> </span><botton id="btn-borrar1" class="btn-tabla">Borrar</botton></td>
+                    
                 </tr>
                 <tr>
-                    <td>Club union y progreso</td>
-                    <td>2/08/2024</td>
-                    <td>20hs</td>
-                    <td>Oks</td>
-                    <td>$3000</td>
+                    <td id="lugar2"></td>
+                    <td id="dia2"></td>
+                    <td id="horario2"></td>
+                    <td id="punto2"></td>
+                    <td id="valor2"></td>
+                    <td class="td-btn"><botton id="btn-editar2" class="btn-tabla">Editar</botton><span> </span><botton id="btn-borrar2" class="btn-tabla">Borrar</botton></td>
                 </tr>
                 <tr>
-                    <td>Centro cultural universitario</td>
-                    <td>15/08/2024</td>
-                    <td>20hs</td>
-                    <td>Por instagram de la banda</td>
-                    <td>$2500</td>
+                    <td id="lugar3"></td>
+                    <td id="dia3"></td>
+                    <td id="horario3"></td>
+                    <td id="punto3"></td>
+                    <td id="valor3"></td>
+                    <td class="td-btn"><botton id="btn-editar3" class="btn-tabla">Editar</botton><span> </span><botton id="btn-borrar3" class="btn-tabla">Borrar</botton></td>
                 </tr>
                 <tr>
-                    <td>Plaza moreno</td>
-                    <td>20/08/2024</td>
-                    <td>16hs</td>
-                    <td>Concierto GRATUITO!</td>
-                    <td>-</td>
+                    <td id="lugar4"></td>
+                    <td id="dia4"></td>
+                    <td id="horario4"></td>
+                    <td id="punto4"></td>
+                    <td id="valor4"></td>
+                    <td class="td-btn"><botton id="btn-editar4" class="btn-tabla">Editar</botton><span> </span><botton id="btn-borrar4" class="btn-tabla">Borrar</botton></td>
                 </tr>
         </table>
     </main>
-    
+    <aside>
+        <div class="form-tabla">
+            <form action="">
+                <label for="input-form">Ingrese aquí los datos a modificar:</label>
+
+                <div>
+                    <label for="">Lugar</label>
+                    <input id="input-lugar" class="input-form" type="text">
+
+                    <label for="">Día</label>
+                    <input id="input-dia" class="input-form" type="text">
+
+                    <label for="">Horario</label>
+                    <input id="input-horario" class="input-form" type="text">
+
+                    <label for="">Puntos de venta</label>
+                    <input id="input-punto" class="input-form" type="text">
+
+                    <label for="">Valor de la entrada</label>
+                    <input id="input-valor" class="input-form" type="text">
+
+                    <button id="btn-form">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </aside>
 
     <footer>
         <ul>
@@ -87,5 +119,6 @@
         <p>2023. No te la viste venir. Derechos reservados.</p>
     </footer>
     <script type:"text/javascript" src="main.js"></script>
+    <script type:"text/javascript" src="tabla.js"></script>
 </body>
 </html>
