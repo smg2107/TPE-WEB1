@@ -14,78 +14,93 @@
 <body>
     <div class="encabezado">
         <header>
-            <div>
+            <div class="container">
                 <h1>NTLVV</h1>
                 <h2>No te la viste venir</h2>
             </div>
         </header>
         <nav>
-            <button class="bar" id="bar"><i class="fa-solid fa-bars" style="color: #587bff;"></i></button>
-            <ul class="menu" >
-                <li><a class="hover" href="index.html">¿Quienes somos?</a></li>
-                <li><a class="hover" href="canciones.html">Canciones</a></li>
-                <li><a class="hover" href="entradas.html">Entradas</a></li>
-            </ul>
+            <div class="container">
+                <button class="bar" id="bar"><i class="fa-solid fa-bars" style="color: #587bff;"></i></button>
+                <ul class="menu" >
+                    <li><a class="hover" href="index.html">¿Quienes somos?</a></li>
+                    <li><a class="hover" href="canciones.html">Canciones</a></li>
+                    <li><a class="hover" href="entradas.html">Entradas</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
     <main>
-        <h1>Esta seccion esta destinada a la informacion de:</h1>
-        <ul class="lista">
-            <li>Lugar, día y horario donde se realizará el concierto</li>
-            <li>Punto de ventas</li>
-            <li>Valor</li>
-        </ul>
-        <h3>Acontinuacion te dejamos una tabla en donde veremos los proximos conciertos:</h3>
-        <div id="use-ajax" class="mensaje"></div>
-        <table>
-            <thead>
-                <tr>
-                    <td class="tabla">Lugar</td>
-                    <td class="tabla">Dia</td>
-                    <td class="tabla">Horario</td>
-                    <td class="tabla">Puntos de venta</td>
-                    <td class="tabla">Valor de la entrada</td>
-                    <td class="td-btn">Modificar</td>
-                    
-                </tr>
-            </thead>
-            <tbody id="tabla">
-            </tbody>
-        </table>
-    </main>
-    <aside>
-        <div class="form-tabla">
-            <form action="">
-                <label for="input-form">Ingrese aquí los datos a modificar:</label>
-
-                <div>
-                    <label for="">Lugar</label>
-                    <input id="input-lugar" class="input-form" type="text">
-
-                    <label for="">Día</label>
-                    <input id="input-dia" class="input-form" type="text">
-
-                    <label for="">Horario</label>
-                    <input id="input-horario" class="input-form" type="text">
-
-                    <label for="">Puntos de venta</label>
-                    <input id="input-punto" class="input-form" type="text">
-
-                    <label for="">Valor de la entrada</label>
-                    <input id="input-valor" class="input-form" type="text">
-
-                    <button id="btn-form">Enviar</button>
+        <div class="container">
+            <h1>Esta seccion esta destinada a la informacion de:</h1>
+            <ul class="lista">
+                <li>Lugar, día y horario donde se realizará el concierto</li>
+                <li>Punto de ventas</li>
+                <li>Valor</li>
+            </ul>
+            <h3>Acontinuacion te dejamos una tabla en donde veremos los proximos conciertos:</h3>
+            <div id="use-ajax" class="mensaje"></div>
+            <div class="tabla-container">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <td class="titulos">Lugar</td>
+                            <td class="titulos">Dia</td>
+                            <td class="titulos">Horario</td>
+                            <td class="titulos">Puntos de venta</td>
+                            <td class="titulos">Valor de la entrada</td>
+                            <td class="td-btn">Modificar</td>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                    </tbody>
+                </table>
+            </div>
+            <section>
+                <div class="form-tabla">
+                    <form action="">
+                        <label for="input-form">Ingrese aquí los datos a modificar:</label>
+        
+                        <div>
+                            <div class="input-container">
+                                <label for="">Lugar</label>
+                                <input id="input-lugar" class="input-form" type="text">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Día</label>
+                                <input id="input-dia" class="input-form" type="text">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Horario</label>
+                                <input id="input-horario" class="input-form" type="text">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Puntos de venta</label>
+                                <input id="input-punto" class="input-form" type="text">
+                            </div>
+                            <div class="input-container">
+                                <label for="">Valor de la entrada</label>
+                                <input id="input-valor" class="input-form" type="text">
+                            </div>
+                            <div class="input-container input-container-crear">
+                                <button id="btn-form">Crear Evento</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </section>
         </div>
-    </aside>
+    </main>
 
     <footer>
-        <ul>
-            <li><a href="https://www.instagram.com/_ntlvv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="Imagenes/logo insta.jpg" alt="Logo Instagram"></a></li>
-            <li><a href="https://youtube.com/playlist?list=PLwEU7Jmnb3IYbxpddj8Cqhrx9DFHETKsk&si=4Th2aawHK-BLe5ZF"><img src="Imagenes/logo youtube.png" alt="Logo Youtube"></a></li>
-        </ul>
-        <p>2023. No te la viste venir. Derechos reservados.</p>
+        <div class="container">
+            <ul>
+                <li><a href="https://www.instagram.com/_ntlvv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="Imagenes/logo insta.jpg" alt="Logo Instagram"></a></li>
+                <li><a href="https://youtube.com/playlist?list=PLwEU7Jmnb3IYbxpddj8Cqhrx9DFHETKsk&si=4Th2aawHK-BLe5ZF"><img src="Imagenes/logo youtube.png" alt="Logo Youtube"></a></li>
+            </ul>
+            <p>2023. No te la viste venir. Derechos reservados.</p>
+        </div>
     </footer>
     <script type:"text/javascript" src="main.js"></script>
     <script type:"text/javascript" src="tabla.js"></script>

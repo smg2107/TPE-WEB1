@@ -17,22 +17,15 @@ async function obtenerDatos(){
         if (res.ok) {
             datos = await res.json();
 
-            container.innerHTML = "";
-            container.classList.remove("exito");
-            container.classList.remove("error");
             dibujarTabla(datos);
+            ocultarMensaje();
         }
         else {
-            container.innerHTML = "<p>Algo salió mal!</p>";
-            container.classList.remove("exito");
-            container.classList.add("error");
+            mostrarMensaje("Algo salió mal!", "error");
         }
     }
     catch (error) {
-        
-        container.innerHTML = error;
-        container.classList.remove("exito");
-        container.classList.add("error");
+        mostrarMensaje(error, "error");
     }
 }
 function dibujarTabla(datos) {
@@ -55,8 +48,10 @@ function dibujarTabla(datos) {
                     <td>${punto}</td>
                     <td>${valor}</td>
                     <td class="td-btn">
-                        <botton class="btn-tabla btn-editar">Editar</botton><span> </span>
-                        <botton class="btn-tabla btn-borrar">Borrar</botton>
+                        <div>
+                            <button class="btn-tabla btn-editar">Editar</button>
+                            <button class="btn-tabla btn-borrar">Borrar</button>
+                        </div>
                     </td>
                 </tr>`
     }
@@ -77,7 +72,19 @@ function dibujarTabla(datos) {
 }
 obtenerDatos();
 
+function mostrarMensaje(texto, clase) {
+    container.classList.remove("exito");
+    container.classList.remove("error");
+    container.classList.remove('ocultar');
+    container.innerHTML = `<p>${texto}</p>`;
+    container.classList.add(clase);
+}
+function ocultarMensaje() {
+    container.classList.add('ocultar');
+}
 
+
+//CREAR
 async function enviarDatos(e){
     e.preventDefault();
 
@@ -99,23 +106,19 @@ async function enviarDatos(e){
         'body':JSON.stringify(data)
         });
         if(res.status==201){
-            obtenerDatos();
-            container.innerHTML = "Creado correctamente!";
-            container.classList.remove("error");
-            container.classList.add("exito");
+            obtenerDatos().then(function(){ 
+                mostrarMensaje("Creado correctamente!", "exito");
+            })
         }
     } catch (error) {
-        container.innerHTML = error;
-        container.classList.remove("exito");
-        container.classList.add("error");
-        
+        mostrarMensaje(`<p>${error}</p>`, "error");
     }
     
 }
 //BORRAR
 async function borrarDatos(e){
     e.preventDefault();
-    let row = e.target.parentElement.parentElement
+    let row = e.target.parentElement.parentElement.parentElement
     let id = row.id;
     console.log("borrar: ", id);
     try {
@@ -124,24 +127,20 @@ async function borrarDatos(e){
         
         });
         if(res.status==200){
-            obtenerDatos();
-            container.innerHTML = "Eliminado correctamente!";
-            container.classList.remove("error");
-            container.classList.add("exito");
+            obtenerDatos().then(function(){ 
+                mostrarMensaje("Eliminado correctamente!", "exito");
+            })
         }
     } catch (error) {
-        container.innerHTML = error;
-        container.classList.remove("exito");
-        container.classList.add("error");
+        mostrarMensaje(`<p>${error}</p>`, "error");
     }
 }
 
 //EDITAR DATOS
 async function editarDatos(e){
     e.preventDefault();
-    let row = e.target.parentElement.parentElement
+    let row = e.target.parentElement.parentElement.parentElement
     let id = row.id;
-    console.log("editar: ", id);
 
     let lugar = document.querySelector("#input-lugar").value;
     let dia = document.querySelector("#input-dia").value;
@@ -161,14 +160,11 @@ async function editarDatos(e){
         'body':JSON.stringify(data)
         });
         if(res.status==200){
-            obtenerDatos();
-            container.innerHTML = "Modificado correctamente!";
-            container.classList.remove("error");
-            container.classList.add("exito");
+            obtenerDatos().then(function(){ 
+                mostrarMensaje("Modificado correctamente!", "exito");
+            })
         }
     } catch (error) {
-        container.innerHTML = error;
-        container.classList.remove("exito");
-        container.classList.add("error");
+        mostrarMensaje(`<p>${error}</p>`, "error");
     }
 }
