@@ -3,7 +3,7 @@ let datos = [];
 let container = document.querySelector("#use-ajax");
 let tabla = document.querySelector("#tabla");
 let botonEnviar = document.querySelector("#btn-form");
-botonEnviar.addEventListener('click',enviarDatos);
+botonEnviar.addEventListener('click',crearDatos);
 
 let id=0;
 
@@ -85,7 +85,7 @@ function ocultarMensaje() {
 
 
 //CREAR
-async function enviarDatos(e){
+async function crearDatos(e){
     e.preventDefault();
 
     let lugar = document.querySelector("#input-lugar").value;
@@ -115,6 +115,8 @@ async function enviarDatos(e){
     }
     
 }
+
+
 //BORRAR
 async function borrarDatos(e){
     e.preventDefault();
