@@ -279,6 +279,25 @@ td {
   background-color: rgb(139, 228, 228);
 }
 
+
+.mensaje {
+  background: white;
+  border: 1px solid #ccc;
+}
+.mensaje p {
+  font-size: 30px;
+  padding: 15px 0;
+}
+
+.error {
+  color: red;
+  border-color: red;
+}
+.exito {
+  color: green;
+  border-color: green;
+}
+
 /*FORMULARIO*/
 
 .input-form{
