@@ -4,10 +4,11 @@ let container = document.querySelector("#use-ajax");
 let tabla = document.querySelector("#tabla");
 let botonEnviar = document.querySelector("#btn-form");
 botonEnviar.addEventListener('click',crearDatos);
+let botonCrear = document.querySelector("#crear-evento");
+botonCrear.addEventListener('click', mostrarInput);
 
-let id=0;
+//OBTENER DATOS
 
-//GET FILA 1
 async function obtenerDatos(){
     
     container.innerHTML = "<p>Loading...</p>";
@@ -28,11 +29,14 @@ async function obtenerDatos(){
         mostrarMensaje(error, "error");
     }
 }
+
+// DIBUJAR TABLA
+
 function dibujarTabla(datos) {
     let filas = "";
 
     for (let i = 0; i < datos.length; i++) {
-        const fila = datos[i];
+        let fila = datos[i];
 
         let id= fila.id;
         let lugar = fila.lugar;
@@ -41,19 +45,19 @@ function dibujarTabla(datos) {
         let punto = fila.punto;
         let valor = fila.valor;
         
-        filas += `<tr id="${id}">
-                    <td>${lugar}</td>
-                    <td>${dia}</td>
-                    <td>${horario}</td>
-                    <td>${punto}</td>
-                    <td>${valor}</td>
-                    <td class="td-btn">
-                        <div>
-                            <button class="btn-tabla btn-editar">Editar</button>
-                            <button class="btn-tabla btn-borrar">Borrar</button>
-                        </div>
-                    </td>
-                </tr>`
+        filas += `  <tr id="${id}">
+                        <td>${lugar}</td>
+                        <td>${dia}</td>
+                        <td>${horario}</td>
+                        <td>${punto}</td>
+                        <td>${valor}</td>
+                        <td class="td-btn">
+                            <div>
+                                <button class="btn-tabla btn-editar">Editar</button>
+                                <button class="btn-tabla btn-borrar">Borrar</button>
+                            </div>
+                        </td>
+                    </tr>`
     }
 
     tabla.innerHTML = filas;
@@ -62,31 +66,53 @@ function dibujarTabla(datos) {
     let botonesBorrar = document.querySelectorAll(".btn-borrar");
     let botonesEditar = document.querySelectorAll(".btn-editar");
     for (let i = 0; i < botonesBorrar.length; i++) {
-        const btnBorrar = botonesBorrar[i];
+        let btnBorrar = botonesBorrar[i];
         btnBorrar.addEventListener('click',borrarDatos);
     }
     for (let i = 0; i < botonesEditar.length; i++) {
-        const btnEditar = botonesEditar[i];
+        let btnEditar = botonesEditar[i];
         btnEditar.addEventListener('click',editarDatos);
     }
 }
 obtenerDatos();
 
+// MOSTRAR MENSAJE
+
 function mostrarMensaje(texto, clase) {
     container.classList.remove("exito");
     container.classList.remove("error");
-    container.classList.remove('ocultar');
+    container.classList.remove("ocultar");
     container.innerHTML = `<p>${texto}</p>`;
     container.classList.add(clase);
 }
+
+//OCULTAR MENSAJE
+
 function ocultarMensaje() {
     container.classList.add('ocultar');
 }
+//MOSTRAR INPUT
+function mostrarInput(){
+    let form = document.querySelector(".form-tabla");
+    form.classList.remove("ocultar-form");
+    form.classList.add("mostrar-form");
+    let btnForm = document.querySelector("#btn-form");
+    btnForm.classList.add("mostrar-boton");
+}
 
+//OCULTAR INPUT
+function ocultarInput(){
+    let form = document.querySelector(".form-tabla");
+    form.classList.toggle("ocultar-form");
+    
+}
 
-//CREAR
+//CREAR DATOS
+
 async function crearDatos(e){
     e.preventDefault();
+    let btnForm = document.querySelector("#btn-form");
+    btnForm.classList.add("mostrar-boton");
 
     let data = validarCampos();
 
@@ -99,7 +125,9 @@ async function crearDatos(e){
             });
             if(res.status==201){
                 obtenerDatos().then(function(){ 
-                    mostrarMensaje("Creado correctamente!", "exito");
+                    mostrarMensaje("¡Creado correctamente!", "exito");
+                    form.reset();
+                    ocultarInput();
                 })
             }
         } catch (error) {
@@ -109,7 +137,10 @@ async function crearDatos(e){
     
 }
 
-function validarCampos() {    
+//VALIDAR DATOS
+
+function validarCampos() {
+    let id = document.querySelector("#input-id").value;
     let lugar = document.querySelector("#input-lugar").value;
     let dia = document.querySelector("#input-dia").value;
     let horario = document.querySelector("#input-horario").value;
@@ -131,7 +162,7 @@ function validarCampos() {
     }
 }
 
-//BORRAR
+//BORRAR DATOS
 async function borrarDatos(e){
     e.preventDefault();
     let row = e.target.parentElement.parentElement.parentElement
@@ -144,7 +175,7 @@ async function borrarDatos(e){
         });
         if(res.status==200){
             obtenerDatos().then(function(){ 
-                mostrarMensaje("Eliminado correctamente!", "exito");
+                mostrarMensaje("¡Eliminado correctamente!", "exito");
             })
         }
     } catch (error) {
@@ -152,11 +183,16 @@ async function borrarDatos(e){
     }
 }
 
-//EDITAR DATOS
+//EDITAR DATOS 
+
 async function editarDatos(e){
     e.preventDefault();
-    let row = e.target.parentElement.parentElement.parentElement
+    let row = e.target.parentElement.parentElement.parentElement;
     let id = row.id;
+    mostrarInput();
+    let btnForm = document.querySelector("#btn-form");
+    btnForm.classList.remove("mostrar-boton");
+    btnForm.classList.add("ocultar-boton");
 
     let data = validarCampos();
 
@@ -168,8 +204,11 @@ async function editarDatos(e){
             'body':JSON.stringify(data)
             });
             if(res.status==200){
-                obtenerDatos().then(function(){ 
-                    mostrarMensaje("Modificado correctamente!", "exito");
+                obtenerDatos().then(function(){
+                    mostrarMensaje("¡Modificado correctamente!", "exito");
+                    form.reset();
+                    ocultarInput();
+                    
                 })
             }
         } catch (error) {

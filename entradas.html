@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f86dae618a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="encabezado">
         <header>
@@ -22,7 +24,7 @@
         <nav>
             <div class="container">
                 <button class="bar" id="bar"><i class="fa-solid fa-bars" style="color: #587bff;"></i></button>
-                <ul class="menu" >
+                <ul class="menu">
                     <li><a class="hover" href="index.html">¿Quienes somos?</a></li>
                     <li><a class="hover" href="canciones.html">Canciones</a></li>
                     <li><a class="hover" href="entradas.html">Entradas</a></li>
@@ -39,6 +41,7 @@
                 <li>Valor</li>
             </ul>
             <h3>A continuación te dejamos una tabla en donde veremos los próximos conciertos:</h3>
+            
             <div class="tabla-container">
                 <table class="tabla">
                     <thead>
@@ -48,43 +51,45 @@
                             <td class="titulos">Horario</td>
                             <td class="titulos">Puntos de venta</td>
                             <td class="titulos">Valor de la entrada</td>
-                            <td class="td-btn">Modificar</td>
-                            
+                            <td class="td-btn"><button id="crear-evento" class="btn-tabla">Crear Evento</button></td>
+
                         </tr>
                     </thead>
                     <tbody id="tabla">
                     </tbody>
                 </table>
             </div>
+           
             <div id="use-ajax" class="mensaje"></div>
             <section>
                 <div class="form-tabla">
-                    <form action="">
+                    <form id="form" action="">
                         <label for="input-form">Ingrese aquí los datos:</label>
-        
+
                         <div>
+                            <input id="input-id" class="input-form" type="hidden">
                             <div class="input-container">
                                 <label for="">Lugar</label>
-                                <input id="input-lugar" class="input-form" type="text">
+                                <input id="input-lugar" placeholder="" class="input-form" type="text">
                             </div>
                             <div class="input-container">
                                 <label for="">Día</label>
-                                <input id="input-dia" class="input-form" type="text">
+                                <input id="input-dia" placeholder="" class="input-form" type="text">
                             </div>
                             <div class="input-container">
                                 <label for="">Horario</label>
-                                <input id="input-horario" class="input-form" type="text">
+                                <input id="input-horario" placeholder="" class="input-form" type="text">
                             </div>
                             <div class="input-container">
                                 <label for="">Puntos de venta</label>
-                                <input id="input-punto" class="input-form" type="text">
+                                <input id="input-punto" placeholder="" class="input-form" type="text">
                             </div>
                             <div class="input-container">
                                 <label for="">Valor de la entrada</label>
-                                <input id="input-valor" class="input-form" type="text">
+                                <input id="input-valor" placeholder="" class="input-form" type="text">
                             </div>
                             <div class="input-container input-container-enviar">
-                                <button id="btn-form">Enviar</button>
+                                <button id="btn-form">Crear</button>
                             </div>
                         </div>
                     </form>
@@ -96,8 +101,11 @@
     <footer>
         <div class="container">
             <ul>
-                <li><a href="https://www.instagram.com/_ntlvv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="Imagenes/logo insta.jpg" alt="Logo Instagram"></a></li>
-                <li><a href="https://youtube.com/playlist?list=PLwEU7Jmnb3IYbxpddj8Cqhrx9DFHETKsk&si=4Th2aawHK-BLe5ZF"><img src="Imagenes/logo youtube.png" alt="Logo Youtube"></a></li>
+                <li><a
+                        href="https://www.instagram.com/_ntlvv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img
+                            src="Imagenes/logo insta.jpg" alt="Logo Instagram"></a></li>
+                <li><a href="https://youtube.com/playlist?list=PLwEU7Jmnb3IYbxpddj8Cqhrx9DFHETKsk&si=4Th2aawHK-BLe5ZF"><img
+                            src="Imagenes/logo youtube.png" alt="Logo Youtube"></a></li>
             </ul>
             <p>2023. No te la viste venir. Derechos reservados.</p>
         </div>
@@ -105,4 +113,5 @@
     <script type:"text/javascript" src="main.js"></script>
     <script type:"text/javascript" src="tabla.js"></script>
 </body>
+
 </html>

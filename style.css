@@ -36,20 +36,9 @@ header {
   padding: 0 15px;
 }
 
-header .container {
-  padding: 15px;
-}
-
 main {
   padding: 50px;
   padding-top: 250px;
-}
-main .container {
-  padding-top: 20px;
-}
-
-main a {
-  color: white;
 }
 
 nav {
@@ -160,6 +149,8 @@ nav ul li {
   cursor: url(Imagenes/logo\ insta.png), auto;
 }
 
+/*FOOTER*/
+
 footer {
   background-color: yellow;
   padding: 30px 15px;
@@ -256,8 +247,6 @@ input {
   margin: 8px;
 }
 
-
-
 /*TABLA*/
 
 table,
@@ -293,6 +282,7 @@ td {
   padding-left: 10px;
   padding-right: 10px;  
 }
+
 .btn-tabla + .btn-tabla {
   margin-left: 10px;
 }
@@ -301,6 +291,7 @@ td {
   background-color: rgb(139, 228, 228);
   
 }
+
 .tabla-container {
   width: 100%;
   overflow: auto;
@@ -309,10 +300,10 @@ td {
 .tabla {
   width: 100%;
 }
+
 .titulos {
   background-color: rgb(139, 228, 228);
 }
-
 
 .mensaje {
   background: white;
@@ -350,7 +341,21 @@ td {
 }
 
 .form-tabla{
-  display: flex;
+  display: none;
+  size: 300px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.mostrar-form{
+  display:flex;
+  size: 300px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.ocultar-form{
+  display:none;
   size: 300px;
   position: relative;
   margin-top: 20px;
@@ -385,9 +390,16 @@ form div{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  padding-right: 10px;  
+  padding-right: 10px;
 }
 
+.ocultar-boton{
+  visibility: hidden;
+}
+
+.mostrar-boton{
+  visibility:visible;
+}
 /*CAPTCHA*/
 
 .divcaptcha {
